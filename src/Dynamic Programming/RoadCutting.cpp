@@ -3,8 +3,6 @@
 
 #define DUMMY_VAR -1			// dummy variable
  
- 
-// recursive solution to find maximum revenue for rod of length n
 // to get maximum revenue for rod of length n
 // p is an array that contains price for each length of road
 // n is the length of the rod
@@ -30,7 +28,7 @@ int rod_cutting_recursive(int* prices, int n)
 
 
 
-// iterative solution to find maximum revenue for rod of length n
+
 // to get maximum revenue for rod of length n
 // p is an array that contains price for each length of road
 // n is the length of the rod
@@ -63,10 +61,8 @@ std::queue<int> cutting(int* cuttingList, int n)
 {
 	int iterator = n;
 	std::queue<int> cuttings_que;
-	while (true)
+	while (iterator >= 0 && cuttingList[iterator] != -1)
 	{
-		if (cuttingList[iterator] == -1) break;
-
 		cuttings_que.push(cuttingList[iterator]);
 		iterator -= cuttingList[iterator];
 	}
